@@ -5,6 +5,7 @@ import org.onlineshop.repository.CommentaryRepository;
 import org.onlineshop.repository.ProductRatingRepository;
 import org.onlineshop.repository.ProductRepository;
 import org.onlineshop.repository.UserRepository;
+import org.onlineshop.util.DtoRating;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
