@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+    <style>
+        label {
+            display: block;
+            font: 1rem 'Fira Sans', sans-serif;
+        }
+
+        input,
+        label {
+            margin: 0.4rem 0;
+        }
+    </style>
+</head>
+<body>
+<form th:action="@{/newproduct}" method="post" enctype="multipart/form-data">
+    <input type="text" name="product"/>
+    <input type="text" name="productprice">
+    <label>Select category</label>
+    <select class="categoryList" name="shopcategory">
+        <option th:each="category : ${categorylist}" th:value="${category}" th:text="${category}"></option>
+    </select>
+    <label>Select company</label>
+    <select class="companyList" name="shopcompany">
+        <option th:each="company : ${companylist}" th:value="${company}" th:text="${company}"></option>
+    </select>
+    <label for="avatar">Choose a profile picture:</label>
+    <input type="file"
+           id="avatar" name="file"
+           accept="image/png, image/jpeg">
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>

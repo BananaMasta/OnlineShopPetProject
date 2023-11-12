@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/registration}" method="POST">
+    <h1>Registration</h1>
+    <div class="container">
+        <label> Login: </label>
+        <input type="text" name="login" placeholder="Login" size="15" required/>
+        <label> Password: </label>
+        <input type="text" name="password" placeholder="Password" size="15" required/>
+        <label> Mail: </label>
+        <input type="text" name="mail" placeholder="Mail" required/>
+        <label> Your name: </label>
+        <input type="text" name="username" placeholder="Your name" required/>
+    </div>
+    <button type="submit">Registration</button>
+</form>
+</body>
+</html>

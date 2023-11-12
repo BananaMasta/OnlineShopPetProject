@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring Boot Thymeleaf Application - Bootstrap Price Range Slider</title>
+
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-slider/css/bootstrap-slider.css}"/>
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{webjars/font-awesome/5.11.2/css/all.css} "/>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th> User name</th>
+        <th> User login</th>
+        <th> User password</th>
+        <th> User role</th>
+        <th> User status</th>
+        <th> Action Buttons</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${userslist}">
+        <td><span th:text="${user.username}"> User name </span></td>
+        <td><span th:text="${user.login}"> User login </span></td>
+        <td><span th:text="${user.password}"> User password </span></td>
+        <td><span th:text="${user.userRole}"> User role </span></td>
+        <td><span th:text="${user.active}"> User status </span></td>
+        <td>
+            <form action="#" th:action="@{/adminpanel/userban/} + ${{user.id}}" method="post">
+                <button th:id="'table_entry_childs_button_' + ${user.id}" type="submit">
+                    <i>User ban</i>
+                </button>
+            </form>
+        </td>
+        <td>
+            <form action="#" th:action="@{/userupdate/} + ${{user.id}}" method="get">
+                <button th:id="'table_entry_childs_button_' + ${user.id}" type="submit">
+                    <i>User update</i>
+                </button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

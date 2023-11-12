@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" th:action="@{/usercommentary}">
+    <input type="text" name="username"/>
+    <button type="submit">Find</button>
+    <section class="wrapper">
+        <main class="row title">
+            <ul>
+                <li>User comment</li>
+                <li>Product name</li>
+            </ul>
+        </main>
+    </section>
+    <div th:each="usercomments : ${usercom}">
+        <section class="wrapper">
+            <ul>
+                <li th:text="${usercomments.userComment}"></li>
+                <li th:text="${usercomments.product.name}"></li>
+            </ul>
+        </section>
+    </div>
+</form>
+</body>
+</html>
